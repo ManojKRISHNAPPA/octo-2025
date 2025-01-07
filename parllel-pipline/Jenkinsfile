@@ -3,6 +3,10 @@ pipeline{
     parameters{
         choice(name: 'ENVIRONMENT',choice: ['qa','dev','prod'],description: 'pipeline on different node')
     }
+    tools{
+        jdk 'java-11'
+        maven 'maven'
+    }    
 
     stages{
         stage('checkout'){
