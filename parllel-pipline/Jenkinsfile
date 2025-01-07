@@ -1,0 +1,47 @@
+pipeline{
+    agent none
+    parameters{
+        choice(name: 'ENVIRONMENT',choice: ['qa','dev','prod'],description: 'pipeline on different node')
+    }
+
+    stages{
+        stage('checkout'){
+            agent {
+                label 'qa'
+            }
+
+            steps{
+                echo "chekou the code"
+                git branch:'main', url: 'https://github.com/ManojKRISHNAPPA/test-1.git'
+            }
+        }
+
+        stage('Build & test'){
+            parallel{
+                stage('build'){
+                    agent any
+
+                    steps{
+                        echo "building maven"
+                        sh 'mvn clean install'
+                    }
+                }
+                stage('Unit testing'){
+                    agent any
+                    steps{
+                        echo "running the unit testing"
+                        sh 'mvn test'
+                    }
+
+                }
+            }    
+        }
+
+        stage('Deploy'){
+            agen any
+            steps{
+                echo "deploying to ${params.ENVIRONMENT}"
+            }
+        }
+    }
+}
