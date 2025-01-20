@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh '''
                     pwd
-                    cd project-1/
+                    cd project-2/
                     terraform init
                     terraform plan -out=tfplan
                     terraform show -no-color tfplan > tfplan.txt
