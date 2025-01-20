@@ -13,7 +13,7 @@ resource "aws_instance" "instance-1" {
       delete_on_termination = true
     }
     tags = {
-      Name = "grafana-server"
+      Name = "Grafana-server"
     }
 
 }
