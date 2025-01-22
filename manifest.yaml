@@ -1,0 +1,43 @@
+apiVersion:
+kind: Pod
+metadata:
+spec:
+
+  #in kubernetes we have lot of objects that will under kind 
+
+
+
+  #api + verion == apiVersion
+  #kind 
+  #metadta
+
+
+  # key value pair based
+
+  # fruit: Apple
+  # vegetable: cucumber
+  # drinks: coke 
+
+  #array/list
+  # fruit: 
+  # - oranges
+  # - Apple
+  # - Banana
+  # vegetable:
+  # - carrot
+  # - Tamato 
+  # drinks: coke 
+
+  #Dictionary or Map
+  # fruit: 
+  # - oranges
+  #     calrories: 100
+  #     Fat: 0.0
+  #     carbs::2 
+  # - Apple
+
+  # - Banana
+  # vegetable:
+  # - carrot
+  # - Tamato 
+  # drinks: coke 
